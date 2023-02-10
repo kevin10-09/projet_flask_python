@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bulma.min.css')}}">
+    <title>Product Page</title>
+  </head>
+  <body class="hero is-fullheight is-default">
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/profile">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              Home</a></li>
+  
+          </ul>
+        </nav>
+        <div class="columns">
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="{{ url_for('static', filename='images/messi.jpg') }}" alt="yes man">
+              
+            </figure>
+          </div>
+          <div class="column">
+            <h1 class="title">ADIDAS X SPEEDPORTAL.1</h1>
+            <h2 class="subtitle">$100.00</h2>
+            <hr>
+            <p> Pour sa cinquième (et dernière) participation à une Coupe du Monde, Lionel Messi va évoluer avec la X Speedportal.1 qu’il incarne aujourd’hui. Du côté du coloris, adidas lui a réservé une petite surprise puisque c’est en s’inspirant de la f50.6 TUNIT que la X Speedportal.1 « Leyenda » a été imaginée. Sublime.</p>
+            <hr>
+            <div class="field">
+              <div class="control">
+                <label class="label">Quantity</label>
+                <input class="input" type="number" value="1">
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link">Add to Card</button>
+              </div>
+              <div class="control">
+                <button class="button is-light">Share</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </body>
+</html>

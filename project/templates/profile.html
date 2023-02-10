@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bulma.min.css')}}">
+    
+    <style>
+        body {
+            background-image: url('static/images/i.jpg');
+            background-size: cover;
+          }
+        
+    </style>
+
+</head>
+
+<body class="hero is-fullheight has-background is-fullwidth">
+    
+    <section>
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container is-centered">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-menu">
+                            <div class="navbar-start">
+                              <a class="navbar-item" href="/base">
+                                <span class="icon">
+                                    <i class="fas fa-home"></i>
+                                  </span>
+                                 <p class="has-text-dark is-size-4"> Accueil</p></a>
+                              <a class="navbar-item"  href="/Produit">
+                                <span class="icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                  </span> <p class="has-text-dark is-size-4">Produits</p></a>
+                            </div>
+                          
+                        <div class="navbar-end">
+                            <a href="/login" class="navbar-item">
+                                <span class="icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                  </span>
+                                  <p class="has-text-dark is-size-4">Login</p>   
+                            </a>
+                            <a href="/register" class="navbar-item">
+                                <span class="icon">
+                                    <i class="fas fa-save"></i>
+                                  </span>
+                                  <p class="has-text-dark is-size-4">Register</p>                                  
+                            </a>
+                            <a href="{{ url_for('logout') }}" class="navbar-item">
+                                <span class="icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                  </span>
+                                  <p class="has-text-dark is-size-4"> Logout</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    </section>
+
+    {% if message is defined and message %}
+    <div class="has-text-dark is-size-1"><marquee>{{ message }}</marquee width="200px"></div> 
+{% endif %}
+    <h1 class="title has-text-centered" align="center" >
+        {% for users in user %}
+        <p class="has-text-white"> Welcome</p>
+        {% endfor %}
+    </h1>
+   
+    <div class="container">
+        {% block content %}  {% endblock %}
+    </div>
+</div>
+
+</body>
+
+</html>
